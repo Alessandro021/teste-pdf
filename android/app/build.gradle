@@ -109,17 +109,29 @@ def reactNativeArchitectures() {
 }
 
 android {
+// @generated begin react-native-pdf-packaging-options - expo prebuild (DO NOT MODIFY) sync-e288c3c5efbb1ef5e1a1959a848260c36558a381
+
+    packagingOptions {
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/x86_64/libjsc.so'
+        pickFirst 'lib/arm64-v8a/libjsc.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+    }
+
+// @generated end react-native-pdf-packaging-options
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.testepdf"
+    namespace 'com.cenna.testepdf'
     defaultConfig {
-        applicationId "com.testepdf"
+        applicationId 'com.cenna.testepdf'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
 
     splits {

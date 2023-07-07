@@ -1,21 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView,View, useWindowDimensions } from "react-native";
+import Pdf from "react-native-pdf";
+
+//https://www.npmjs.com/package/react-native-pdf
+
+const source = {
+  uri: "http://samples.leanpub.com/thereactnativebook-sample.pdf",
+  cache: true,
+};
+
 
 export default function App() {
+  const { width, height } = useWindowDimensions();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1 }}>
+      <Pdf
+        // trustAllCerts={false}
+        source={source}
+        // onLoadComplete={(numberOfPages, filePath) => {
+        //   console.log(`Number of pages: ${numberOfPages}`);
+        // }}
+        // onPageChanged={(page, numberOfPages) => {
+        //   console.log(`Current page: ${page}`);
+        // }}
+        // onError={(error) => {
+        //   console.log(error);
+        // }}
+        // onPressLink={(uri) => {
+        //   console.log(`Link pressed: ${uri}`);
+        // }}
+        style={{ flex: 1, width, height }}
+      />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

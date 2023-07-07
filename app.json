@@ -3,8 +3,15 @@
     "name": "teste-pdf",
     "slug": "teste-pdf",
     "version": "1.0.0",
+    "plugins": [
+      "@config-plugins/react-native-blob-util",
+      "@config-plugins/react-native-pdf"
+    ],
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.cenna.testepdf"
+    }
   }
 }

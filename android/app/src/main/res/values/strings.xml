@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">teste-pdf</string>
+  <string name="app_name">teste-pdf</string>
+  <string name="blob_provider_authority">com.cenna.testepdf.blobs</string>
 </resources>
